@@ -10,18 +10,21 @@ using AndreTurismoApp.Models;
 using System.Net.Http;
 using Newtonsoft.Json;
 using AndreTurismoApp.Models.DTO;
+using AndreTurismoApp.Services;
 
-namespace Proj_Turismo_API_EF.Controllers
+namespace AndreTurismoApp.AddressesService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class AddressesController : ControllerBase
     {
         private readonly AndreTurismoAppAddressesServiceContext _context;
+        private readonly PostOfficesService _postOfficesService;
 
-        public AddressesController(AndreTurismoAppAddressesServiceContext context)
+        public AddressesController(AndreTurismoAppAddressesServiceContext context, PostOfficesService postOfficesService)
         {
             _context = context;
+            _postOfficesService = postOfficesService;
         }
 
         // GET: api/Addresses
@@ -92,33 +95,16 @@ namespace Proj_Turismo_API_EF.Controllers
         {
             if (_context.Address == null)
             {
-                return Problem("Entity set 'Proj_Turismo_API_EFContext.Address'  is null.");
+                return Problem("Entity set 'AndreTurismoAppAddressesServiceContext.Address'  is null.");
             }
 
-            if (address.ZipCode == null)
-            {
-                return BadRequest("ZipCode  is required.");
-            }
+            ViaCepAddressDto addressDto = await _postOfficesService.GetAddress(address.ZipCode);
+            var completeAddress = new Address(addressDto);
+            _context.Address.Add(completeAddress);
 
-            var httpClient = new HttpClient();
-            var response = await httpClient.GetAsync($"https://viacep.com.br/ws/{address.ZipCode}/json/");
-            if (response == null)
-            {
-                return BadRequest("Invalid ZipCode");
-            }
-
-            var content = await response.Content.ReadAsStringAsync();
-            var viaCepAddress = JsonConvert.DeserializeObject<ViaCepAddressDto>(content);
-
-            address.Street = viaCepAddress.Logradouro;
-            address.Neighborhood = viaCepAddress.Bairro;
-            address.IdCity.Description = viaCepAddress.Localidade;
-            address.Extension = viaCepAddress.Uf;
-
-            _context.Address.Add(address);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAddress", new { id = address.Id }, address);
+            return completeAddress;
         }
 
         // DELETE: api/Addresses/5

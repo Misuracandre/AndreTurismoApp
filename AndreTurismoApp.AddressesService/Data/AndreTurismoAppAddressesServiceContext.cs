@@ -14,18 +14,18 @@ namespace AndreTurismoApp.AddressesService.Data
         {
         }
 
-        public DbSet<AndreTurismoApp.Models.City> City { get; set; } = default!;
+        //public DbSet<AndreTurismoApp.Models.City> City { get; set; } = default!;
 
         public DbSet<AndreTurismoApp.Models.Address> Address { get; set; }
 
-        public DbSet<AndreTurismoApp.Models.Client> Client { get; set; }
+        //public DbSet<AndreTurismoApp.Models.Client> Client { get; set; }
 
-        public DbSet<ViaCepAddressDto> ViaCepAddresses { get; set; }
+        //public DbSet<ViaCepAddressDto> ViaCepAddresses { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<ViaCepAddressDto>().HasNoKey();
-        }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<ViaCepAddressDto>().HasNoKey();
+        //}
 
     }
 }

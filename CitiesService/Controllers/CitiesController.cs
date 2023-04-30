@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AndreTurismoApp.AddressesService.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AndreTurismoApp.Models;
+using CitiesService.Data;
 
-namespace AndreTurismoApp.AddressesService.Controllers
+namespace AndreTurismoApp.CitiesService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class CitiesController : ControllerBase
     {
-        private readonly AndreTurismoAppAddressesServiceContext _context;
+        private readonly AndreTurismoAppCitiesServiceContext _context;
 
-        public CitiesController(AndreTurismoAppAddressesServiceContext context)
+        public CitiesController(AndreTurismoAppCitiesServiceContext context)
         {
             _context = context;
         }
@@ -88,7 +88,7 @@ namespace AndreTurismoApp.AddressesService.Controllers
         {
           if (_context.City == null)
           {
-              return Problem("Entity set 'Proj_Turismo_API_EFContext.City'  is null.");
+              return Problem("Entity set 'CitiesServiceContext.City'  is null.");
           }
             _context.City.Add(city);
             await _context.SaveChangesAsync();
