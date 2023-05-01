@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AndreTurismoApp.ClientsService.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("Weather3")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -19,9 +19,9 @@ namespace AndreTurismoApp.ClientsService.Controllers
         }
 
         [HttpGet(Name = "GetForecast2")]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<ClientWeatherForecast> Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return Enumerable.Range(1, 5).Select(index => new ClientWeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = Random.Shared.Next(-20, 55),

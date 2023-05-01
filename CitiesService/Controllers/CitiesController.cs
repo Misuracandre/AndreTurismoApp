@@ -10,7 +10,7 @@ using CitiesService.Data;
 
 namespace AndreTurismoApp.CitiesService.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/MyCities")]
     [ApiController]
     public class CitiesController : ControllerBase
     {

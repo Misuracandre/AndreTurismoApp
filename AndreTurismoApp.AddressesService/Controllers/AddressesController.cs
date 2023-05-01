@@ -14,7 +14,7 @@ using AndreTurismoApp.Services;
 
 namespace AndreTurismoApp.AddressesService.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/MyAddresses")]
     [ApiController]
     public class AddressesController : ControllerBase
     {

@@ -1,6 +1,6 @@
-namespace AndreTurismoApp.AddressesService
+namespace CitiesService
 {
-    public class WeatherForecast
+    public class CityWeatherForecast
     {
         public DateTime Date { get; set; }
 

@@ -12,7 +12,7 @@ using AndreTurismoApp.ClientsService.Data;
 
 namespace AndreTurismoApp.ClientsService.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/MyClients")]
     [ApiController]
     public class ClientsController : ControllerBase
     {

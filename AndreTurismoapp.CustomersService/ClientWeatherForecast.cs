@@ -1,6 +1,6 @@
 namespace AndreTurismoApp.ClientsService
 {
-    public class WeatherForecast
+    public class ClientWeatherForecast
     {
         public DateTime Date { get; set; }
 

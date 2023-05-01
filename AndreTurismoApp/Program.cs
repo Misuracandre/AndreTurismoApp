@@ -11,6 +11,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<AddressesService>();
 builder.Services.AddSingleton<CitiesService>();
+builder.Services.AddSingleton<ClientsService>();
 
 var app = builder.Build();
 
