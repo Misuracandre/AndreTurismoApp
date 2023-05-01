@@ -29,7 +29,7 @@ namespace AndreTurismoApp.AddressesService.Controllers
 
         // GET: api/Addresses
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Address>>> GetAddress()
+        public async Task<ActionResult<List<Address>>> GetAddress()
         {
             if (_context.Address == null)
             {
