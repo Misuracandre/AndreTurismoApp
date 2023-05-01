@@ -6,20 +6,20 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AndreTurismoApp.Models;
-using AndreTurismoapp.CustomersService.Data;
 using AndreTurismoApp.AddressesService.Data;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using AndreTurismoApp.ClientsService.Data;
 
-namespace AndreTurismoapp.CustomersService.Controllers
+namespace AndreTurismoApp.ClientsService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomersController : ControllerBase
+    public class ClientsController : ControllerBase
     {
-        private readonly AndreTurismoappCustomersServiceContext _context;
+        private readonly AndreTurismoAppClientsServiceContext _context;
         private readonly AndreTurismoAppAddressesServiceContext _contextAddress;
 
-        public CustomersController(AndreTurismoappCustomersServiceContext context, AndreTurismoAppAddressesServiceContext contextAddress)
+        public ClientsController(AndreTurismoAppClientsServiceContext context, AndreTurismoAppAddressesServiceContext contextAddress)
         {
             _context = context;
             _contextAddress = contextAddress;

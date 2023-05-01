@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreTurismoApp.Repositorie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreTurismoApp.AddressesService", "AndreTurismoApp.AddressesService\AndreTurismoApp.AddressesService.csproj", "{54D49971-8E7C-4356-B115-355C76663FCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreTurismoApp.CitiesService", "CitiesService\AndreTurismoApp.CitiesService.csproj", "{0609C69E-09B8-42E2-AC76-79C0D91FE513}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreTurismoApp.CitiesService", "CitiesService\AndreTurismoApp.CitiesService.csproj", "{0609C69E-09B8-42E2-AC76-79C0D91FE513}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreTurismoapp.CustomersService", "AndreTurismoapp.CustomersService\AndreTurismoapp.CustomersService.csproj", "{C21C4E1C-E328-4980-BE85-D3D257F3870E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreTurismoApp.ClientsService", "AndreTurismoapp.CustomersService\AndreTurismoApp.ClientsService.csproj", "{C21C4E1C-E328-4980-BE85-D3D257F3870E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

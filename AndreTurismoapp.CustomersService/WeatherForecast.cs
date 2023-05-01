@@ -1,4 +1,4 @@
-namespace AndreTurismoapp.CustomersService
+namespace AndreTurismoApp.ClientsService
 {
     public class WeatherForecast
     {

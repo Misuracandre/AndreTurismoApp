@@ -18,8 +18,8 @@ namespace CitiesService.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet(Name = "GetForecast3")]
+        public IEnumerable<WeatherForecast> GetForecast()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

@@ -28,8 +28,8 @@ namespace AndreTurismoApp.AddressesService.Controllers
         }
 
         // GET: api/Addresses
-        [HttpGet]
-        public async Task<ActionResult<List<Address>>> GetAddress()
+        [HttpGet("api/Addresses/All")]
+        public async Task<ActionResult<List<Address>>> GetAllAddresses()
         {
             if (_context.Address == null)
             {
@@ -90,7 +90,7 @@ namespace AndreTurismoApp.AddressesService.Controllers
 
         // POST: api/Addresses
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost("PostAddressController")]
         public async Task<ActionResult<Address>> PostAddress(Address address)
         {
             if (_context.Address == null)

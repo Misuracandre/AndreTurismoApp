@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using AndreTurismoApp.Models;
 
-namespace AndreTurismoapp.CustomersService.Data
+namespace AndreTurismoApp.ClientsService.Data
 {
-    public class AndreTurismoappCustomersServiceContext : DbContext
+    public class AndreTurismoAppClientsServiceContext : DbContext
     {
-        public AndreTurismoappCustomersServiceContext (DbContextOptions<AndreTurismoappCustomersServiceContext> options)
+        public AndreTurismoAppClientsServiceContext (DbContextOptions<AndreTurismoAppClientsServiceContext> options)
             : base(options)
         {
         }

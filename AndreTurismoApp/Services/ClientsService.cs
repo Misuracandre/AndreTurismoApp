@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace AndreTurismoApp.Services
 {
-    public class CustomersService
+    public class ClientsService
     {
         static readonly HttpClient CustomerClient = new HttpClient();
 
@@ -11,7 +11,7 @@ namespace AndreTurismoApp.Services
         {
             try
             {
-                HttpResponseMessage response = await CustomersService.CustomerClient.GetAsync("https://localhost:7239/api/Cities");
+                HttpResponseMessage response = await ClientsService.CustomerClient.GetAsync("https://localhost:7239/api/Cities");
                 response.EnsureSuccessStatusCode();
                 string client = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<List<Client>>(client);
