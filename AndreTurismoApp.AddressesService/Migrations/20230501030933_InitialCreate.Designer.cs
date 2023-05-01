@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AndreTurismoApp.AddressesService.Migrations
 {
     [DbContext(typeof(AndreTurismoAppAddressesServiceContext))]
-    [Migration("20230430193630_InitialCreate")]
+    [Migration("20230501030933_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
